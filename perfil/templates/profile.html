@@ -1,5 +1,7 @@
 {% extends 'base.html' %}
 
+{% block title %}Perfil Personal{% endblock %}
+
 {% load static %}
 
 {% block content %}
@@ -21,35 +23,12 @@
     </section>
     <section class="project-container">
         <h3>Proyectos</h3>
+        {% for project in projects %}
         <div class="project">
-            <h4>Título del Proyecto</h4>
-            <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-                Ipsa veniam architecto, quas maxime temporibus nisi debitis 
-                ad fugit! Vel, soluta ad. Illo nihil voluptas qui quo 
-                at minus sequi. Soluta.
-            </p>
+            <h4>{{ project.title }}</h4>
+            <p>{{ project.desc }}</p>
         </div>
-
-        <div class="project">
-            <h4>Título del Proyecto</h4>
-            <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-                Ipsa veniam architecto, quas maxime temporibus nisi debitis 
-                ad fugit! Vel, soluta ad. Illo nihil voluptas qui quo 
-                at minus sequi. Soluta.
-            </p>
-        </div>
-
-        <div class="project">
-            <h4>Título del Proyecto</h4>
-            <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-                Ipsa veniam architecto, quas maxime temporibus nisi debitis 
-                ad fugit! Vel, soluta ad. Illo nihil voluptas qui quo 
-                at minus sequi. Soluta.
-            </p>
-        </div>
+        {% endfor %}
     </section>
 </main>
 
